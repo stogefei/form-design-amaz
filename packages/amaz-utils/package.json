@@ -1,0 +1,24 @@
+{
+  "name": "@amaz/utils",
+  "version": "1.0.0",
+  "description": "公共业务函数库",
+  "main": "src/index.ts",
+  "scripts": {},
+  "files": [
+    "dist",
+    "lib",
+    "es",
+    "src",
+    "index.js",
+    "index.d.ts"
+  ],
+  "author": "zaf",
+  "license": "ISC",
+  "dependencies": {
+    "crypto-js": "^4.1.1",
+    "dingtalk-jsapi": "^2.14.1",
+    "jsencrypt": "3.2.1",
+    "lodash-es": "^4.17.15",
+    "moment": "^2.29.1"
+  }
+}
