@@ -1,6 +1,5 @@
 import { defineComponent, reactive, ref } from "vue";
 import { useRouter } from "vue-router";
-import { ElButton, ElInput, ElFormItem, ElDivider, ElForm } from "element-plus";
 import { UserUtils } from "@amaz/utils";
 import "./styles/index.less";
 const prefixCls = "amaz-login";
@@ -11,11 +10,6 @@ interface FormState {
 export default defineComponent({
   name: prefixCls,
   components: {
-    ElForm: ElForm,
-    ElButton: ElButton,
-    ElFormItem: ElFormItem,
-    ElDivider: ElDivider,
-    ElInput: ElInput,
   },
   setup: function () {
     const router = useRouter();

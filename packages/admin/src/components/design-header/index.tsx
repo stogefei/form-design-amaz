@@ -1,6 +1,5 @@
 import { defineComponent, ref, watch } from "vue";
 import Header from "../header";
-import { ElMenu } from "element-plus";
 import {
   useRouter,
   useRoute,
@@ -21,8 +20,6 @@ const menus = [
 const component = {
   name: prefixCls,
   components: {
-    ElMenu: ElMenu,
-    ElMenuItem: ElMenu.Item,
     BHeader: Header,
   },
   props: {},
@@ -59,7 +56,7 @@ const component = {
     return () => {
       const MenuTag = (
         <el-menu
-          v-model:selectedKeys={current.value}
+          v-model={current.value}
           mode="horizontal"
           onSelect={handleSelect}
         >
