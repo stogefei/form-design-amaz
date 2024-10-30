@@ -1,6 +1,6 @@
 import { defineComponent } from "vue";
 
-const prefixCls = "amaz-form-design-tools";
+const prefixCls = "amaz-form-design-control-box";
 const component = {
   name: prefixCls,
   props: {},
