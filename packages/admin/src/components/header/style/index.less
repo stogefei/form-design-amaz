@@ -2,12 +2,13 @@
   position: relative;
   width: 100%;
   height: 52px;
-  box-shadow: 0 0 10px rgb(51 93 182 / 20%);
   z-index: 99;
   background: #fff;
-  .ant-menu {
+  display: flex;
+  justify-content: space-between;
+  flex: 0 0 52px;
+  .el-menu {
     margin: 0 auto;
-    display: inline-block;
     border: 0!important;
     height: 52px;
     font-size: 16px;
@@ -17,13 +18,11 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: absolute;
-    top: 0;
     height: 52px;
   }
   &__middle{
     width: 100%;
-    height: 52px;
+    max-width: 300px;
     text-align: center;
   }
   &__right{
@@ -31,7 +30,7 @@
     line-height: 52px;
     text-align: right;
     display: flex;
-    position: absolute;
+    align-items: center;
     top: 0;
     height: 52px;
   }

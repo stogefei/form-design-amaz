@@ -1,15 +1,11 @@
 import { defineComponent } from "vue";
-import "./style/index.less";
-import { Design } from "@amaz/form/src/design";
-const prefixCls = "amaz-design";
+const prefixCls = "amaz-form-design-header";
 const component = {
   name: prefixCls,
-  components: {
-    FormDesign: Design,
-  },
+  props: {},
   setup(props, { slots, attrs, emit }) {
     return () => {
-      return <form-design />;
+      return <h3>{prefixCls}</h3>;
     };
   },
 };

@@ -1,12 +1,8 @@
 import { defineComponent, ref, watch } from "vue";
 import Header from "../header";
-import {
-  useRouter,
-  useRoute,
-  onBeforeRouteUpdate,
-  RouteLocationNormalized,
-} from "vue-router";
+import { useRouter, useRoute } from "vue-router";
 const prefixCls = "amaz-design-header";
+
 const menus = [
   {
     key: "formDesign",
@@ -17,6 +13,7 @@ const menus = [
     text: "流程设计",
   },
 ];
+
 const component = {
   name: prefixCls,
   components: {
@@ -26,29 +23,36 @@ const component = {
   setup(props, { slots, attrs, emit }) {
     const router: any = useRouter();
     const route: any = useRoute();
+    const current: any = ref("formDesign");
+
     watch(
       () => route.path,
       (to) => {
         console.log(route.name, "监听到变化====");
+        current.value = route.name;
       },
+      { immediate: true, deep: true },
     );
-    const current: any = ref(["formDesign"]);
-    onBeforeRouteUpdate((to: RouteLocationNormalized) => {
-      console.log(to, "=====");
-      current.value = [to.name];
-    });
-    const handleSelect = ({ item, key, selectedKeys }: any) => {
+    const handleSelect = (key, keyPath) => {
       const modelCode: string = route.params.modelCode;
       const appCode: any = route.params.appCode;
       router
         .push({ name: key, params: { appCode, modelCode } })
-        .then(() => {})
+        .then(() => {
+          current.value = key;
+        })
         .catch(() => {});
     };
+
     const ItemTags = [];
     menus.forEach((menu) => {
       ItemTags.push(
-        <el-menu-item class={`${prefixCls}__menuitem`} key={menu.key}>
+        <el-menu-item
+          class={`${prefixCls}__menuitem`}
+          index={menu.key}
+          route={{ path: menu.key }}
+          key={menu.key}
+        >
           {menu.text}
         </el-menu-item>,
       );
@@ -56,9 +60,10 @@ const component = {
     return () => {
       const MenuTag = (
         <el-menu
-          v-model={current.value}
+          defaultActive={current.value}
           mode="horizontal"
           onSelect={handleSelect}
+          router={true}
         >
           {ItemTags}
         </el-menu>

@@ -1,0 +1,24 @@
+.amaz-form-design{
+    &__aside{
+        width: 266px;
+        .el-container{
+            height: 100%;
+            background: #fff;
+            .el-header{
+                border-top: 1px solid #ececec;
+                border-bottom: 1px solid #ececec;
+                padding: 0 10px;
+            }
+            .el-main{
+                padding: 0;
+            }
+        }
+    }
+    &__middle{
+        .el-header{
+            background: #fff;
+            border: 1px solid #ececec;
+            padding: 0 10px;
+        }
+    }
+}

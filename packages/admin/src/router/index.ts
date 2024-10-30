@@ -16,14 +16,11 @@ const designRouter: RouteRecordRaw = {
   children: [
     {
       path: ":modelCode/model", // 应用编码 + 模型编码
+      redirect: { name: "formDesign" },
       components: {
         default: () => import("../views/application/design/index"),
       },
       children: [
-        {
-          path: "/",
-          redirect: { name: "formDesign" },
-        },
         {
           path: "form",
           name: "formDesign",
@@ -76,7 +73,7 @@ const router: Router = createRouter({
     import.meta.env.MODE === "development"
       ? createWebHistory()
       : createWebHashHistory(),
-  routes, // `routes: routes` 的缩写
+  routes,
 });
 
 export default router;

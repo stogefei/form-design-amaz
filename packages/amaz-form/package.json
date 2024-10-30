@@ -1,0 +1,22 @@
+{
+  "name": "@amaz/form",
+  "version": "1.0.0",
+  "description": "表单设计组件",
+  "main": "src/index.ts",
+  "scripts": {},
+  "files": [
+    "dist",
+    "lib",
+    "es",
+    "src",
+    "index.js",
+    "index.d.ts"
+  ],
+  "author": "zaf",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^3.5.12",
+    "element-plus": "^2.8.6",
+    "vuedraggable": "^4.1.0"
+  }
+}
