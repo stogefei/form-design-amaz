@@ -18,6 +18,14 @@
   },
   "author": "zaf",
   "license": "ISC",
+  "husky": {
+    "hooks": {
+      "pre-commit": [
+        "lint-staged"
+      ],
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "lint-staged": {
     "packages/**/*.{js,vue,ts,tsx,jsx}": [
       "prettier --write",
