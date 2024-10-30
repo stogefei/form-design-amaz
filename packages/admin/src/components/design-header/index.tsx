@@ -29,7 +29,7 @@ const component = {
     watch(
       () => route.path,
       (to) => {
-        console.log(route.name, "监听到变化");
+        console.log(route.name, "监听到变化====");
       },
     );
     const current: any = ref(["formDesign"]);
